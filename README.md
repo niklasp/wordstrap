@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 _s
 ===
 
@@ -42,3 +43,9 @@ Then, update the stylesheet header in style.css and the links in footer.php with
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
 Good luck!
+=======
+wordstrap
+=========
+
+a personal merge from roots.io and _s as a good starting point for wordpress theme development
+>>>>>>> b2002cae853fb2842bc6baa7703158cbaa9759cd
