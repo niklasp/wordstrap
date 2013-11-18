@@ -1,8 +1,8 @@
 <?php
 /**
- * kunscht functions and definitions
+ * wordstrap functions and definitions
  *
- * @package kunscht
+ * @package wordstrap
  */
 
 /**
@@ -11,7 +11,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 
-if ( ! function_exists( 'kunscht_setup' ) ) :
+if ( ! function_exists( 'wordstrap_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -19,15 +19,15 @@ if ( ! function_exists( 'kunscht_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-function kunscht_setup() {
+function wordstrap_setup() {
 
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on kunscht, use a find and replace
-	 * to change 'kunscht' to the name of your theme in all the template files
+	 * If you're building a theme based on wordstrap, use a find and replace
+	 * to change 'wordstrap' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'kunscht', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'wordstrap', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -45,7 +45,7 @@ function kunscht_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'kunscht' ),
+		'primary' => __( 'Primary Menu', 'wordstrap' ),
 	) );
 
 	/**
@@ -56,22 +56,22 @@ function kunscht_setup() {
 	/**
 	 * Setup the WordPress core custom background feature.
 	 */
-	add_theme_support( 'custom-background', apply_filters( 'kunscht_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'wordstrap_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
-endif; // kunscht_setup
-add_action( 'after_setup_theme', 'kunscht_setup' );
+endif; // wordstrap_setup
+add_action( 'after_setup_theme', 'wordstrap_setup' );
 
 
 
 /**
  * Register widgetized area and update sidebar with default widgets
  */
-function kunscht_widgets_init() {
+function wordstrap_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar (id=sidebar-1)', 'kunscht' ),
+		'name'          => __( 'Sidebar (id=sidebar-1)', 'wordstrap' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -79,7 +79,7 @@ function kunscht_widgets_init() {
 		'after_title'   => '</h2>',
 	));
 	register_sidebar( array(
-		'name'          => __( 'Sidebar2 (id=sidebar-2)', 'kunscht' ),
+		'name'          => __( 'Sidebar2 (id=sidebar-2)', 'wordstrap' ),
 		'id'            => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -87,7 +87,7 @@ function kunscht_widgets_init() {
 		'after_title'   => '</h2>',
 	));
     register_sidebar(array(
-    'name' => __('Footer', 'kunscht'),
+    'name' => __('Footer', 'wordstrap'),
     'id' => 'sidebar-footer',
     'before_widget' => '<section class="widget %1$s %2$s col-md-4"><div class="widget-inner">',
     'after_widget' => '</div></section>',
@@ -95,25 +95,26 @@ function kunscht_widgets_init() {
     'after_title' => '</h4>',
   ));
 }
-add_action( 'widgets_init', 'kunscht_widgets_init' );
+add_action( 'widgets_init', 'wordstrap_widgets_init' );
 
 /**
  * Enqueue scripts and styles
  */
-function kunscht_scripts() {
+function wordstrap_scripts() {
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/bootstrap/css/bootstrap.min.css');
-	wp_enqueue_style( 'customcss', get_stylesheet_directory_uri() . '/css/kunscht.css');
+	wp_enqueue_style( 'customcss', get_stylesheet_directory_uri() . '/css/wordstrap.css');
 	wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array('jquery'), false, true );
+	wp_enqueue_script( 'kunschtjs', get_template_directory_uri() . '/js/kunschtad.js', array('jquery'), false, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'kunscht-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'wordstrap-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'kunscht_scripts' );
+add_action( 'wp_enqueue_scripts', 'wordstrap_scripts' );
 
 // register custom post types
 
