@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package kunscht
+ * @package wordstrap
  */
 ?>
 	<div id="secondary" class="widget-area" role="complementary">
@@ -14,14 +14,14 @@
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'kunscht' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Archives', 'wordstrap' ); ?></h1>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>
 			</aside>
 
 			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'kunscht' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Meta', 'wordstrap' ); ?></h1>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>

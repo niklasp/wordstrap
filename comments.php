@@ -4,10 +4,10 @@
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
- * handled by a callback to kunscht_comment() which is
+ * handled by a callback to wordstrap_comment() which is
  * located in the inc/template-tags.php file.
  *
- * @package kunscht
+ * @package wordstrap
  */
 
   if (post_password_required()) {

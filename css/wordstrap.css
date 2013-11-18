@@ -10,6 +10,16 @@ body {
 body.admin-bar #wrap .navbar-fixed-top {
 	top: 28px;
 }
+.navbar-fixed-top {
+  height: 0;
+    /* Set our transitions up. */
+  -webkit-transition: opacity 0.8s;
+  -moz-transition: opacity 0.8s;
+  transition: opacity 0.8s;
+}
+.navbar-hidden {
+  opacity: 0;
+}
 
 code {
     white-space: normal;
@@ -52,5 +62,7 @@ code {
   font-size: 80%;
 }
 
-.navbar-default {
-	background: rgb(255,255,255);
+.icon-lg {
+  font-size: 18px;
+  line-height: 1.33;
+}

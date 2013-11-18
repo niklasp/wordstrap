@@ -3,17 +3,17 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package kunscht
+ * @package wordstrap
  */
 
 /**
  * Add theme support for Infinite Scroll.
  * See: http://jetpack.me/support/infinite-scroll/
  */
-function kunscht_jetpack_setup() {
+function wordstrap_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
 		'footer'    => 'page',
 	) );
 }
-add_action( 'after_setup_theme', 'kunscht_jetpack_setup' );
+add_action( 'after_setup_theme', 'wordstrap_jetpack_setup' );

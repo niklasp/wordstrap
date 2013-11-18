@@ -12,39 +12,39 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package kunscht
+ * @package wordstrap
  */
 
 /**
  * Setup the WordPress core custom header feature.
  *
- * @uses kunscht_header_style()
- * @uses kunscht_admin_header_style()
- * @uses kunscht_admin_header_image()
+ * @uses wordstrap_header_style()
+ * @uses wordstrap_admin_header_style()
+ * @uses wordstrap_admin_header_image()
  *
- * @package kunscht
+ * @package wordstrap
  */
-function kunscht_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'kunscht_custom_header_args', array(
+function wordstrap_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'wordstrap_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'kunscht_header_style',
-		'admin-head-callback'    => 'kunscht_admin_header_style',
-		'admin-preview-callback' => 'kunscht_admin_header_image',
+		'wp-head-callback'       => 'wordstrap_header_style',
+		'admin-head-callback'    => 'wordstrap_admin_header_style',
+		'admin-preview-callback' => 'wordstrap_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'kunscht_custom_header_setup' );
+add_action( 'after_setup_theme', 'wordstrap_custom_header_setup' );
 
-if ( ! function_exists( 'kunscht_header_style' ) ) :
+if ( ! function_exists( 'wordstrap_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see kunscht_custom_header_setup().
+ * @see wordstrap_custom_header_setup().
  */
-function kunscht_header_style() {
+function wordstrap_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -76,15 +76,15 @@ function kunscht_header_style() {
 	</style>
 	<?php
 }
-endif; // kunscht_header_style
+endif; // wordstrap_header_style
 
-if ( ! function_exists( 'kunscht_admin_header_style' ) ) :
+if ( ! function_exists( 'wordstrap_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see kunscht_custom_header_setup().
+ * @see wordstrap_custom_header_setup().
  */
-function kunscht_admin_header_style() {
+function wordstrap_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -104,15 +104,15 @@ function kunscht_admin_header_style() {
 	</style>
 <?php
 }
-endif; // kunscht_admin_header_style
+endif; // wordstrap_admin_header_style
 
-if ( ! function_exists( 'kunscht_admin_header_image' ) ) :
+if ( ! function_exists( 'wordstrap_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see kunscht_custom_header_setup().
+ * @see wordstrap_custom_header_setup().
  */
-function kunscht_admin_header_image() {
+function wordstrap_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
@@ -124,4 +124,4 @@ function kunscht_admin_header_image() {
 	</div>
 <?php
 }
-endif; // kunscht_admin_header_image
+endif; // wordstrap_admin_header_image
