@@ -40,6 +40,10 @@ code {
 #wrap > .container {
   padding: 70px 15px 20px;
 }
+
+aside[role=sidebar] {
+  margin-top: 20px;
+}
 .container .credit {
   margin: 20px 0;
 }
