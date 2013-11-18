@@ -117,62 +117,6 @@ function wordstrap_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'wordstrap_scripts' );
 
-// register custom post types
-
-if ( ! function_exists('custom_post_type_work') ) {
-
-// Register Custom Post Type
-function custom_post_type_work() {
-
-	$labels = array(
-		'name'                => _x( 'Works', 'Post Type General Name', 'artspace' ),
-		'singular_name'       => _x( 'Work', 'Post Type Singular Name', 'artspace' ),
-		'menu_name'           => __( 'Work', 'artspace' ),
-		'parent_item_colon'   => __( 'Parent Work:', 'artspace' ),
-		'all_items'           => __( 'All Works', 'artspace' ),
-		'view_item'           => __( 'View Work', 'artspace' ),
-		'add_new_item'        => __( 'Add New Work', 'artspace' ),
-		'add_new'             => __( 'New Work', 'artspace' ),
-		'edit_item'           => __( 'Edit Work', 'artspace' ),
-		'update_item'         => __( 'Update Work', 'artspace' ),
-		'search_items'        => __( 'Search works', 'artspace' ),
-		'not_found'           => __( 'No works found', 'artspace' ),
-		'not_found_in_trash'  => __( 'No works found in Trash', 'artspace' ),
-	);
-	$rewrite = array(
-		'slug'                => 'works',
-		'with_front'          => true,
-		'pages'               => true,
-		'feeds'               => true,
-	);
-	$args = array(
-		'label'               => __( 'work', 'artspace' ),
-		'description'         => __( 'Your (art)-work', 'artspace' ),
-		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', ), 
-		'taxonomies'          => array( 'category', 'post_tag' ),
-		'hierarchical'        => false,
-		'public'              => true,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		'show_in_nav_menus'   => true,
-		'show_in_admin_bar'   => true,
-		'menu_position'       => 5,
-		'menu_icon'           => 'icon.png',
-		'can_export'          => true,
-		'has_archive'         => true,
-		'exclude_from_search' => false,
-		'publicly_queryable'  => true,
-		'rewrite'             => $rewrite,
-		'capability_type'     => 'post',
-	);
-	register_post_type( 'work', $args );
-
-}
-
-// Hook into the 'init' action
-add_action( 'init', 'custom_post_type_work', 0 );
-
 }
 
 // REPLACE "current_page_" WITH CLASS "active" 
